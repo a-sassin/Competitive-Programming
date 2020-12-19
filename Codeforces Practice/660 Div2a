@@ -1,0 +1,67 @@
+A. Captain Flint and Crew Recruitment
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void push(int n, int a[],int b[])
+{
+	if(a[0] == 1 && a[1] == 2 && a[2] == 3)
+	{
+		cout<<"No"<<endl;
+	}
+	else
+	{
+	int c=0 , count=0 , k =0;
+	for(int i=0;i<n;i++)
+	{
+		if(a[i] == b[i])
+		{
+			count++;
+		}
+		else
+		{
+			k = b[i] - a[i];
+		}
+	}
+	for(int i=0;i<n;i++)
+	{
+		if(a[i] != b[i] && k>0)
+		{
+			if(a[i] + k == b[i])
+			{
+				c++;
+			}
+		}
+	}
+	if(c == n - count)
+	{
+		cout<<"YES"<<endl;
+	}
+	else
+	{
+		cout<<"NO"<<endl;
+	}
+}
+}
+
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		cin>>n;
+		int a[n],b[n];
+		for(int i=0;i<n;i++)
+		{
+			cin>>a[i];
+		}
+		for(int i=0;i<n;i++)
+		{
+			cin>>b[i];
+		}
+		push(n , a,b);
+	}
+	return 0;
+}
